@@ -11,6 +11,7 @@ namespace Estudo.Repositorios.Comum.Entity
         where TEntidade : class
     {
 
+
         protected DbContext _contexto;
 
         public RepositorioGenericoEntity(DbContext contexto)
