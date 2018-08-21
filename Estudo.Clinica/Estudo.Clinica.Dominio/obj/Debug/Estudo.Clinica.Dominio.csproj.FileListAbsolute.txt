@@ -1,0 +1,6 @@
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\bin\Debug\Estudo.Clinica.Dominio.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\bin\Debug\Estudo.Clinica.Dominio.pdb
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\obj\Debug\Estudo.Clinica.Dominio.csprojAssemblyReference.cache
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\obj\Debug\Estudo.Clinica.Dominio.csproj.CoreCompileInputs.cache
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\obj\Debug\Estudo.Clinica.Dominio.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Clinica.Dominio\obj\Debug\Estudo.Clinica.Dominio.pdb

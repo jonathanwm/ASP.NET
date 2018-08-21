@@ -1,0 +1,12 @@
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\Estudo.Comum.Entity.dll.config
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\Estudo.Comum.Entity.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\Estudo.Comum.Entity.pdb
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\EntityFramework.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\EntityFramework.SqlServer.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\EntityFramework.xml
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\bin\Debug\EntityFramework.SqlServer.xml
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\obj\Debug\Estudo.Comum.Entity.csprojAssemblyReference.cache
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\obj\Debug\Estudo.Comum.Entity.csproj.CoreCompileInputs.cache
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\obj\Debug\Estudo.Comum.Entity.csproj.CopyComplete
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\obj\Debug\Estudo.Comum.Entity.dll
+E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Comum.Entity\obj\Debug\Estudo.Comum.Entity.pdb

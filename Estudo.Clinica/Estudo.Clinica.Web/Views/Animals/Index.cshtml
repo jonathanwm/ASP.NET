@@ -1,0 +1,117 @@
+﻿@model IEnumerable<Estudo.Clinica.Web.ViewModels.Animal.AnimalExibicaoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    <div class="col-md-10 col-lg-10 col-sm-10">
+        <input type="text" id="pesquisaAnimal" class="form-control" />
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2">
+        <button id="btnPesquisaAnimal" class="btn btn-default">Pesquisar</button>
+    </div>
+</div>
+
+
+<table class="table" id="tblAnimais">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Raca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeDoDono)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Idade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Raca)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeDoDono)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@section Scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnPesquisaAnimal").click(function () {
+                var termoPesquisa = $("#pesquisaAnimal").val();
+                $.ajax({
+                    method: "GET", // metodo de requisição
+                    //preciso falar para odne eu vou fazer minha requisição, ou seja a url
+                    url: "/Animals/FiltrarPorNome?pesquisa=" + termoPesquisa,
+                    success: function (data) {
+                        $("#tblAnimais tbody > tr").remove();
+                        $.each(data, function (i, animal) {
+                            $("#tblAnimais tbody").append(
+                                "<tr>" +
+                                "   <td>" + animal.Nome + "</td>" +
+                                "   <td>" + animal.Idade + "</td>" +
+                                "   <td>" + animal.Raca + "</td>" +
+                                "   <td>" + animal.NomeDoDono + "</td>" +
+                                "   <td>" +
+                                "         <a href='/Animals/Edit/" + animal.Id + "'>Editar</a> |" +
+                                "         <a href='/Animals/Details/" + animal.Id + "'>Detalhes</a> |" +
+                                "         <a href='/Animals/Delete/" + animal.Id + "'>Deletar</a>" +
+                                "   </td>" +
+                                "</tr>"
+
+                            );
+                        });
+
+                    },
+                    error: function (data) {
+                        alert("Houve um erro na pesquisa.");
+
+                    }
+
+
+                });
+
+            });
+
+
+        });
+
+
+    </script>
+
+
+
+
+}

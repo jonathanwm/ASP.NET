@@ -1,0 +1,50 @@
+﻿@model Estudo.Clinica.Web.ViewModels.Animal.AnimalExibicaoViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Animal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Idade)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Idade)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeDoDono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeDoDono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

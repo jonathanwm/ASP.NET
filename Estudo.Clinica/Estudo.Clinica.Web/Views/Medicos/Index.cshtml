@@ -1,0 +1,106 @@
+﻿@model IEnumerable<Estudo.Clinica.Web.ViewModels.Medico.MedicoExibicaoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row">
+    <div class="col-lg-10 col-md-10 col-sm-10">
+        <input type="text" id="pesquisaMedico" class="form-control" />
+    </div>
+    <div class="col-lg-2 col-md-2 col-sm-2">
+        <button id="btnPesquisaMedico" class="btn btn-default">Pesquisar</button>
+    </div>
+</div>
+
+<table class="table" id="tblMedicos">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Especialidade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroCRV)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Especialidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumeroCRV)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+
+@section Scripts{
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnPesquisaMedico").click(function () {
+                var termoPesquisa = $("#pesquisaMedico").val();
+                $.ajax({
+                    method: "GET", // metodo de requisição
+                    //preciso falar para odne eu vou fazer minha requisição, ou seja a url
+                    url: "/Medicos/FiltrarPorNome?pesquisa=" + termoPesquisa,
+                    success: function (data) {
+                        $("#tblMedicos tbody > tr").remove();
+                        $.each(data, function (i, medico) {
+                            $("#tblMedicos tbody").append(
+                                "<tr>" +
+                                "   <td>" + medico.Nome + "</td>" +
+                                "   <td>" + medico.Especialidade + "</td>" +
+                                "   <td>" + medico.NumeroCRV + "</td>" +
+                                "   <td>" +
+                                "         <a href='/Medicos/Edit/" + medico.Id + "'>Editar</a> |" +
+                                "         <a href='/Medicos/Details/" + medico.Id + "'>Detalhes</a> |" +
+                                "         <a href='/Medicos/Delete/" + medico.Id + "'>Deletar</a>" +
+                                "   </td>" +
+                                "</tr>"
+
+                            );
+                        });
+
+                    },
+                    error: function (data) {
+                        alert("Houve um erro na pesquisa.");
+
+                    }
+
+
+                });
+
+            });
+
+
+        });
+
+    </script>
+
+
+}
