@@ -48,14 +48,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexto.cs" />
-    <Compile Include="Migrations\201808161716144_MigrationInicial.cs" />
-    <Compile Include="Migrations\201808161716144_MigrationInicial.Designer.cs">
-      <DependentUpon>201808161716144_MigrationInicial.cs</DependentUpon>
+    <Compile Include="Migrations\201808212103271_MigrationComAnimalMedicoProntuario.cs" />
+    <Compile Include="Migrations\201808212103271_MigrationComAnimalMedicoProntuario.Designer.cs">
+      <DependentUpon>201808212103271_MigrationComAnimalMedicoProntuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TypeConfiguration\AnimalTypeConfiguration.cs" />
     <Compile Include="TypeConfiguration\MedicoTypeConfiguration.cs" />
+    <Compile Include="TypeConfiguration\ProntuarioTypeConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -72,8 +73,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201808161716144_MigrationInicial.resx">
-      <DependentUpon>201808161716144_MigrationInicial.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201808212103271_MigrationComAnimalMedicoProntuario.resx">
+      <DependentUpon>201808212103271_MigrationComAnimalMedicoProntuario.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -14,11 +14,13 @@ namespace Estudo.Clinica.AcessoDados.Entity
 
         public DbSet<Animal> Animais { get; set; }
         public DbSet<Medico> Medicos { get; set; }
+        public DbSet<Prontuario> Prontuarios { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Configurations.Add(new AnimalTypeConfiguration());
             modelBuilder.Configurations.Add(new MedicoTypeConfiguration());
+            modelBuilder.Configurations.Add(new ProntuarioTypeConfiguration());
         }
     }
 }

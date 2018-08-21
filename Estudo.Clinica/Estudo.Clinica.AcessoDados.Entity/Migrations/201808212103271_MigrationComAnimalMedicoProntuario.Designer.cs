@@ -7,13 +7,13 @@ namespace Estudo.Clinica.AcessoDados.Entity.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class MigrationInicial : IMigrationMetadata
+    public sealed partial class MigrationComAnimalMedicoProntuario : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationInicial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationComAnimalMedicoProntuario));
         
         string IMigrationMetadata.Id
         {
-            get { return "201808161716144_MigrationInicial"; }
+            get { return "201808212103271_MigrationComAnimalMedicoProntuario"; }
         }
         
         string IMigrationMetadata.Source

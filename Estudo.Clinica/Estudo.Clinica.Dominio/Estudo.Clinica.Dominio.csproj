@@ -42,6 +42,7 @@
   <ItemGroup>
     <Compile Include="Animal.cs" />
     <Compile Include="Medico.cs" />
+    <Compile Include="Prontuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
