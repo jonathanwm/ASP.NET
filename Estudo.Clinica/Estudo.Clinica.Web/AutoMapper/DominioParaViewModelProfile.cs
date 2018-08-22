@@ -2,6 +2,7 @@
 using Estudo.Clinica.Dominio;
 using Estudo.Clinica.Web.ViewModels.Animal;
 using Estudo.Clinica.Web.ViewModels.Medico;
+using Estudo.Clinica.Web.ViewModels.Prontuario;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,16 @@ namespace Estudo.Clinica.Web.AutoMapper
 
             Mapper.CreateMap<Medico, MedicoExibicaoViewModel>();
             Mapper.CreateMap<Medico, MedicoViewModel>();
+
+            Mapper.CreateMap<Prontuario, ProntuarioExibicaoViewModel>()
+                .ForMember(p => p.NomeAnimal, opt =>
+                            opt.MapFrom(src => src.Animal.Nome)
+                            )
+                 .ForMember(p => p.NomeMedico, opt =>
+                            opt.MapFrom(src => src.Medico.Nome)
+                            );
+      
+            Mapper.CreateMap<Prontuario, ProntuarioViewModel>();
 
 
 

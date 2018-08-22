@@ -9,7 +9,8 @@ namespace Estudo.Clinica.Dominio
     public class Prontuario
     {
         public long Id { get; set; }
-        public DateTime DataHora { get; set; }
+        public DateTime Data { get; set; }
+        public TimeSpan Hora { get; set; }
         public string Observacoes { get; set; }
         public long IdMedico { get; set; }
         public virtual Medico Medico { get; set; }

@@ -36,3 +36,4 @@ E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Clinica.AcessoDados.Entity\
 E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Clinica.AcessoDados.Entity\obj\Debug\Estudo.Clinica.AcessoDados.Entity.pdb
 E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Clinica.AcessoDados.Entity\obj\Debug\Estudo.Clinica.AcessoDados.Entity.Migrations.MigrationComAnimalMedicoProntuario.resources
 E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Clinica.AcessoDados.Entity\obj\Debug\Estudo.Clinica.AcessoDados.Entity.csproj.GenerateResource.cache
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Clinica.AcessoDados.Entity\obj\Debug\Estudo.Clinica.AcessoDados.Entity.Migrations.MigrationAlteracaoCamposDataeHora.resources

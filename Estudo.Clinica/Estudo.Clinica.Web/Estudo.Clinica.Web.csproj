@@ -163,6 +163,7 @@
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MedicosController.cs" />
+    <Compile Include="Controllers\ProntuariosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -171,6 +172,8 @@
     <Compile Include="ViewModels\Animal\AnimalViewModel.cs" />
     <Compile Include="ViewModels\Medico\MedicoExibicaoViewModel.cs" />
     <Compile Include="ViewModels\Medico\MedicoViewModel.cs" />
+    <Compile Include="ViewModels\Prontuario\ProntuarioExibicaoViewModel.cs" />
+    <Compile Include="ViewModels\Prontuario\ProntuarioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -221,6 +224,11 @@
     <Content Include="Views\Medicos\Details.cshtml" />
     <Content Include="Views\Medicos\Edit.cshtml" />
     <Content Include="Views\Medicos\Index.cshtml" />
+    <Content Include="Views\Prontuarios\Create.cshtml" />
+    <Content Include="Views\Prontuarios\Delete.cshtml" />
+    <Content Include="Views\Prontuarios\Details.cshtml" />
+    <Content Include="Views\Prontuarios\Edit.cshtml" />
+    <Content Include="Views\Prontuarios\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

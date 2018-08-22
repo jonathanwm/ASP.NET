@@ -14,6 +14,7 @@ namespace Estudo.Clinica.Web.App_Start
         {
             Mapper.AddProfile<DominioParaViewModelProfile>();
             Mapper.AddProfile<ViewModelParaDominioProfile>();
+            
         }
 
     }

@@ -17,9 +17,14 @@ namespace Estudo.Clinica.AcessoDados.Entity.TypeConfiguration
                 .HasDatabaseGeneratedOption(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)
                 .HasColumnName("PRO_ID");
 
-            Property(p => p.DataHora)
+            Property(p => p.Data)
                 .IsRequired()
                 .HasColumnName("PRO_DATA");
+
+
+            Property(p => p.Hora)
+                .IsRequired()
+                .HasColumnName("PRO_HORA");
 
             Property(p => p.Observacoes)
                 .IsRequired()
