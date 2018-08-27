@@ -11,6 +11,8 @@ namespace Estudo.Clinica.Web.ViewModels.Prontuario
 
         public long Id { get; set; }
         [Display(Name = "Data do atendimento")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
         [Display(Name = "Hora do atendimento")]

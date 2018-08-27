@@ -9,49 +9,122 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeAnimal)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeMedico)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Data)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hora)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Observacoes)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeAnimal)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NomeMedico)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Data)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Observacoes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+<div class="row">
+    <div class="col-md-10 col-lg-10 col-sm-10">
+        <input type="text" id="pesquisaProntuario" class="form-control" />
+    </div>
+    <div class="col-md-2 col-lg-2 col-sm-2">
+        <button id="btnPesquisaProntuario" class="btn btn-default">Pesquisar</button>
+    </div>
+</div>
+
+<table class="table" id="tblProntuarios">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeAnimal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeMedico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Data)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Observacoes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeAnimal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeMedico)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Data)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Hora)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Observacoes)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+@section scripts{
+
+   <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnPesquisaProntuario").click(function () {
+                var termoPesquisa = $("#pesquisaProntuario").val();
+                $.ajax({
+                    method: "GET", // metodo de requisição
+                    //preciso falar para odne eu vou fazer minha requisição, ou seja a url
+                    url: "/Prontuarios/FiltrarPorNome?pesquisa=" + termoPesquisa,
+                    success: function (data) {
+                        $("#tblProntuarios tbody > tr").remove();
+                        $.each(data, function (i, prontuario) {
+                            var cSharpDate = prontuario.Data
+                            var jsDate = new Date(parseInt(cSharpDate.replace(/[^0-9 +]/g, '')));   
+                            
+                            $("#tblProntuarios tbody").append(
+                                "<tr>" +
+                                "   <td>" + prontuario.NomeAnimal + "</td>" +
+                                "   <td>" + prontuario.NomeMedico + "</td>" +
+                                "   <td>" + jsDate.toLocaleDateString() + "</td>" +
+                                "   <td>" + prontuario.Hora + "</td>" +
+                                "   <td>" + prontuario.Observacoes + "</td>" +
+                                "   <td>" +
+                                "         <a href='/Prontuarios/Edit/" + prontuario.Id + "'>Editar</a> |" +
+                                "         <a href='/Prontuarios/Details/" + prontuario.Id + "'>Detalhes</a> |" +
+                                "         <a href='/Prontuarios/Delete/" + prontuario.Id + "'>Deletar</a>" +
+                                "   </td>" +
+                                "</tr>"
+
+                            );
+                        });
+
+                    },
+                    error: function (data) {
+                        alert("Houve um erro na pesquisa.");
+
+                    }
+
+
+                });
+
+            });
+
+
+        });
+
+
+
+
+    </script>
+
+
+
+
+
+
+}

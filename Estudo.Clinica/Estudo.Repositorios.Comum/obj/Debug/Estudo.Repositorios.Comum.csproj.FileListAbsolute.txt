@@ -4,3 +4,9 @@ E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Repositorios.Comum\
 E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.csproj.CoreCompileInputs.cache
 E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.dll
 E:\Documentos\Curso C#\Projeto Clinica\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.pdb
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\bin\Debug\Estudo.Repositorios.Comum.dll
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\bin\Debug\Estudo.Repositorios.Comum.pdb
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.csprojAssemblyReference.cache
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.csproj.CoreCompileInputs.cache
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.dll
+E:\Documentos\Curso C#\ASP.NET\Estudo.Clinica\Estudo.Repositorios.Comum\obj\Debug\Estudo.Repositorios.Comum.pdb

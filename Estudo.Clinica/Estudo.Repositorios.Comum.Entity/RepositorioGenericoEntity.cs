@@ -49,7 +49,7 @@ namespace Estudo.Repositorios.Comum.Entity
             _contexto.SaveChanges();
         }
 
-        public List<TEntidade> Selecionar()
+        public virtual List<TEntidade> Selecionar()
         {
             return _contexto.Set<TEntidade>().ToList();
         }

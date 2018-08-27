@@ -25,7 +25,7 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Hora, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Hora, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Hora, new { htmlAttributes = new { @class = "form-control", type = "Time" } })
                 @Html.ValidationMessageFor(model => model.Hora, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -41,7 +41,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdMedico, "IdMedico", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdMedico", null, htmlAttributes: new { @class = "form-control" })
+                @*@Html.DropDownList("IdMedico", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownListFor(model => model.IdMedico, (SelectList)ViewBag.DropDownMedicos, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdMedico, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -49,7 +50,8 @@
         <div class="form-group">
             @Html.LabelFor(model => model.IdAnimal, "IdAnimal", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("IdAnimal", null, htmlAttributes: new { @class = "form-control" })
+                @*@Html.DropDownList("IdAnimal", null, htmlAttributes: new { @class = "form-control" })*@
+                @Html.DropDownListFor(model => model.IdAnimal, (SelectList)ViewBag.DropDownAnimais, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.IdAnimal, "", new { @class = "text-danger" })
             </div>
         </div>

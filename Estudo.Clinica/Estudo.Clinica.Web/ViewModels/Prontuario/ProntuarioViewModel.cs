@@ -13,6 +13,7 @@ namespace Estudo.Clinica.Web.ViewModels.Prontuario
 
         [Display(Name = "Data do atendimento")]
         [Required(ErrorMessage = "A data é Obrigatório")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 

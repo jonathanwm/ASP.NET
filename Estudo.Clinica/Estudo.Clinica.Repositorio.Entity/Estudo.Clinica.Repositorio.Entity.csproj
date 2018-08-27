@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="AnimalRepositorio.cs" />
     <Compile Include="MedicoRepositorio.cs" />
+    <Compile Include="ProntuarioRepositorio.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
