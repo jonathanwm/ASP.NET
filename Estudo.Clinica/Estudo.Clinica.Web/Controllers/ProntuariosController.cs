@@ -19,7 +19,7 @@ namespace Estudo.Clinica.Web.Controllers
 {
     public class ProntuariosController : Controller
     {
-        private Contexto db = new Contexto();
+        
         private IRepositorioGenerico<Prontuario, long> repositorioProntuarios
           = new ProntuarioRepositorio(new Contexto());
 
@@ -32,14 +32,23 @@ namespace Estudo.Clinica.Web.Controllers
         // GET: Prontuarios
         public ActionResult Index()
         {
-            var prontuarios = db.Prontuarios.Include(p => p.Animal).Include(p => p.Medico);
-            return View(Mapper.Map<List<Prontuario>, List<ProntuarioExibicaoViewModel>>(repositorioProntuarios.Selecionar()));
+            var prontuarios = repositorioProntuarios.Selecionar();
+            var teste = Mapper.Map<List<Prontuario>, List<ProntuarioExibicaoViewModel>>(prontuarios);
+            return View(Mapper.Map<List<Prontuario>, List<ProntuarioExibicaoViewModel>>(prontuarios));
         }
 
         public ActionResult FiltrarPorNome(string pesquisa)
         {
             List<Prontuario> prontuarios = repositorioProntuarios.Selecionar().Where(a => a.Observacoes.Contains(pesquisa)).ToList();
             List<ProntuarioExibicaoViewModel> viewModels = Mapper.Map<List<Prontuario>, List<ProntuarioExibicaoViewModel>>(prontuarios);
+            return Json(viewModels, JsonRequestBehavior.AllowGet);
+
+        }
+
+        public ActionResult FiltrarPorNomeMedico(string pesquisa)
+        {
+            List<Medico> medicos = repositorioMedicos.Selecionar().Where(a => a.Nome.Contains(pesquisa)).ToList();
+            List<MedicoExibicaoViewModel> viewModels = Mapper.Map<List<Medico>, List<MedicoExibicaoViewModel>>(medicos);
             return Json(viewModels, JsonRequestBehavior.AllowGet);
 
         }
@@ -82,11 +91,22 @@ namespace Estudo.Clinica.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+
+                TimeSpan hora = TimeSpan.Parse(viewModel.Hora);
                 Prontuario prontuario = Mapper.Map<ProntuarioViewModel, Prontuario>(viewModel);
+                prontuario.Data = prontuario.Data.Add(hora);
                 repositorioProntuarios.Inserir(prontuario);
                 return RedirectToAction("Index");
+
             }
 
+            List<AnimalExibicaoViewModel> animais = Mapper.Map<List<Animal>, List<AnimalExibicaoViewModel>>(repositorioAnimais.Selecionar());
+            SelectList dropDownAnimais = new SelectList(animais, "Id", "Nome");
+            ViewBag.DropDownAnimais = dropDownAnimais;
+
+            List<MedicoExibicaoViewModel> medicos = Mapper.Map<List<Medico>, List<MedicoExibicaoViewModel>>(repositorioMedicos.Selecionar());
+            SelectList dropDownMedicos = new SelectList(medicos, "Id", "Nome");
+            ViewBag.DropDownMedicos = dropDownMedicos;
             return View(viewModel);
         }
 
@@ -123,7 +143,9 @@ namespace Estudo.Clinica.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                TimeSpan hora = TimeSpan.Parse(viewModel.Hora);
                 Prontuario prontuario = Mapper.Map<ProntuarioViewModel, Prontuario>(viewModel);
+                prontuario.Data = prontuario.Data.Add(hora);
                 repositorioProntuarios.Alterar(prontuario);
                 return RedirectToAction("Index");
             }
@@ -152,6 +174,7 @@ namespace Estudo.Clinica.Web.Controllers
         public ActionResult DeleteConfirmed(long id)
         {
             Prontuario prontuario = repositorioProntuarios.SelecionarPorId(id);
+            repositorioProntuarios.Excluir(prontuario);
             return RedirectToAction("Index");
         }
 

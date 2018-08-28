@@ -54,7 +54,7 @@ namespace Estudo.Repositorios.Comum.Entity
             return _contexto.Set<TEntidade>().ToList();
         }
 
-        public TEntidade SelecionarPorId(TChave id)
+        public virtual TEntidade SelecionarPorId(TChave id)
         {
             return _contexto.Set<TEntidade>().Find(id);
         }

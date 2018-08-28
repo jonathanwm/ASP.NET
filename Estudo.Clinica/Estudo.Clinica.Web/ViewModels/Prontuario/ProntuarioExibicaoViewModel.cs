@@ -16,7 +16,7 @@ namespace Estudo.Clinica.Web.ViewModels.Prontuario
         public DateTime Data { get; set; }
 
         [Display(Name = "Hora do atendimento")]
-        public TimeSpan Hora { get; set; }
+        public string Hora { get; set; }
 
         [Display(Name = "Obvervações do atendimento")]
         public string Observacoes { get; set; }

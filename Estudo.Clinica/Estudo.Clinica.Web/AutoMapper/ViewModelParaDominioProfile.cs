@@ -18,6 +18,15 @@ namespace Estudo.Clinica.Web.AutoMapper
             Mapper.CreateMap<AnimalViewModel, Animal>();
             Mapper.CreateMap<MedicoViewModel, Medico>();
             Mapper.CreateMap<ProntuarioViewModel, Prontuario>();
+                //.ForMember(p => p.Data, opt => {
+                    
+                //    opt.MapFrom(src => src.Hora);
+
+
+
+                //});
+
+                    
 
         }
     }

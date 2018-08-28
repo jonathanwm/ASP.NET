@@ -23,5 +23,11 @@ namespace Estudo.Clinica.Repositorio.Entity
             return _contexto.Set<Prontuario>().Include(a => a.Animal).Include(m => m.Medico).ToList();
 
         }
+
+        public override Prontuario SelecionarPorId(long id) {
+
+            return _contexto.Set<Prontuario>().Include(a => a.Animal).Include(m => m.Medico).SingleOrDefault(p => p.Id == id);
+
+        }
     }
 }

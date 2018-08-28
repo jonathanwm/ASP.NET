@@ -11,18 +11,18 @@ namespace Estudo.Clinica.Web.ViewModels.Prontuario
 
         public long Id { get; set; }
 
-        [Display(Name = "Data do atendimento")]
         [Required(ErrorMessage = "A data é Obrigatório")]
+        [Display(Name = "Data do atendimento")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:yyyy-MM-dd}")]
         [DataType(DataType.Date)]
         public DateTime Data { get; set; }
 
-        [Display(Name = "Hora do atendimento")]
         [Required(ErrorMessage = "A Hora do atendimento é Obrigatório")]
-        public TimeSpan Hora { get; set; }
+        [Display(Name = "Hora do atendimento")]
+        public string Hora { get; set; }
 
-        [Display(Name = "Obvervações do atendimento")]
         [Required(ErrorMessage = "A Observação é obrigatória")]
+        [Display(Name = "Obvervações do atendimento")]
         [MaxLength(100, ErrorMessage = "A Observação poderá ter no máximo 100 caracteres")]
         public string Observacoes { get; set; }
 

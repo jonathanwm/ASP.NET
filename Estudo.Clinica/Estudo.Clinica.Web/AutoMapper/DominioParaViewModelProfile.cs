@@ -35,9 +35,16 @@ namespace Estudo.Clinica.Web.AutoMapper
                             )
                  .ForMember(p => p.NomeMedico, opt =>
                             opt.MapFrom(src => src.Medico.Nome)
+                            )
+                 .ForMember(p => p.Hora, opt =>
+                            opt.MapFrom(src => src.Data.ToShortTimeString())
                             );
-      
-            Mapper.CreateMap<Prontuario, ProntuarioViewModel>();
+
+            Mapper.CreateMap<Prontuario, ProntuarioViewModel>()
+                .ForMember(p => p.Hora, opt =>
+                           opt.MapFrom(src => src.Data.ToShortTimeString())
+
+                );
 
 
 

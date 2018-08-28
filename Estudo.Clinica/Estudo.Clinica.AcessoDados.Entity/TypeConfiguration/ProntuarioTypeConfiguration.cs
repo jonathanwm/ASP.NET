@@ -21,11 +21,6 @@ namespace Estudo.Clinica.AcessoDados.Entity.TypeConfiguration
                 .IsRequired()
                 .HasColumnName("PRO_DATA");
 
-
-            Property(p => p.Hora)
-                .IsRequired()
-                .HasColumnName("PRO_HORA");
-
             Property(p => p.Observacoes)
                 .IsRequired()
                 .HasColumnName("PRO_OBSERVACOES")

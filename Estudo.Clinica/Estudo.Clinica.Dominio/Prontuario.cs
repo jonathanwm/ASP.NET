@@ -10,7 +10,6 @@ namespace Estudo.Clinica.Dominio
     {
         public long Id { get; set; }
         public DateTime Data { get; set; }
-        public TimeSpan Hora { get; set; }
         public string Observacoes { get; set; }
         public long IdMedico { get; set; }
         public virtual Medico Medico { get; set; }
